@@ -55,4 +55,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     if Vagrant.has_plugin?('vagrant-notify-forwarder')
         config.notify_forwarder.enable = true
     end
+	
+	# Customization
+	config.ssh.extra_args = ["-t", "cd /home/vagrant/www; bash --login"]
+
 end
